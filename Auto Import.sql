@@ -1,0 +1,10 @@
+LOAD DATA INFILE 'test.csv' 
+INTO TABLE datamining.test 
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+
+
+
