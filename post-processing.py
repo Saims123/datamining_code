@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pylab as pl
 
 df = pandas.read_csv('./predictions_weka.csv')
-
+# Result boundary set for each subtype family, to double check for under/overfitting
 free=[['Accordian'],212]
 lip=[['Trombone',  'Trumpet', 'Trumpet', 'Tuba', 'FrenchHorn', 'EnglishHorn'], 3020]
 single=[['Clarinet', 'Saxophone'], 1936]
@@ -42,7 +42,7 @@ print('Simple : ' ,chart.loc[chart['Instrument'].isin(simple[0]), 'count'].sum()
 print('Composite : ' ,chart.loc[chart['Instrument'].isin(composite[0]), 'count'].sum() , ' Diff : ', composite[1] - chart.loc[chart['Instrument'].isin(composite[0]), 'count'].sum())
 
 print(chart)
-
+# Bar chart generation
 p = chart.plot(grid=True,kind ='bar',x='Instrument', y='count', legend=False)
 totals = []
 for i in chart['count']:
